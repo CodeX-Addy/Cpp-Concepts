@@ -9,5 +9,9 @@ int main() {
     cout << i << endl;
     cout << *p << endl;
     cout << **p2 << endl;
+    // Now printing the address of i
+    cout << &i << endl;
+    cout << p << endl;
+    cout << *p2 << endl;
     return 0;
 }
