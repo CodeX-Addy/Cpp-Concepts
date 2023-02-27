@@ -13,5 +13,6 @@ int main() {
     cout << &i << endl;
     cout << p << endl;
     cout << *p2 << endl;
+    
     return 0;
 }
