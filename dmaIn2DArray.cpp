@@ -21,6 +21,14 @@ int main() {
             cout << arr[i][j] << " ";
         }cout << endl;
     }
+    
 
     return 0;
 }
+// Syntax for different rows and columns
+    int m,n;
+    cin >> m >> n;
+    int **arr = new int*[m];
+    for(int i=0; i<m; i++){
+        arr[i] = new int[n];
+    }
