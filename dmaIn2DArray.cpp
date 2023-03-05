@@ -32,3 +32,9 @@ int main() {
     for(int i=0; i<m; i++){
         arr[i] = new int[n];
     }
+// Releasing memory
+for(int i=0; i<m; i++){
+    delete [] arr[i];
+}
+
+delete [] arr;
