@@ -20,12 +20,12 @@ int main() {
     j++;// Updation on value of j will also update the value of i
     cout << i << endl;
     
-    // Calling the pass by reference function
+    // Calling pass by reference function
     cout << i << endl;
     update2(i); // This will update the value of i
     cout << i << endl;
     
-    // Calling the pass by value function
+    // Calling pass by value function
     cout << i << endl;
     update1(i);// Will not update the value of i
     cout << i << endl;
