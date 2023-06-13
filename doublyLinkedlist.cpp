@@ -14,7 +14,7 @@ class Node {
         this->next = NULL;
     }
 };
-
+// Traversing the linked list
 void print(Node* head){
     Node* temp = head;
     while(temp != NULL){
