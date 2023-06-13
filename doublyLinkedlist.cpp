@@ -28,7 +28,7 @@ void print(Node* head){
 int main() {
     Node* node1 = new Node(10);
     Node* head = node1;
-    print(head);
+    print(head); //Output:-10
 
     return 0;
 }
