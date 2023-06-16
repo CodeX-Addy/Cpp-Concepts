@@ -15,6 +15,9 @@ class Node {
         this->next = NULL;
     }
 };
+
+// Insert at beginning
+
 // Traversing the linked list
 void print(Node* head){
     Node* temp = head;
@@ -24,6 +27,7 @@ void print(Node* head){
     }
     cout << endl;
 }
+
 
 int main() {
     Node* node1 = new Node(10);
