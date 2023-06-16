@@ -17,7 +17,12 @@ class Node {
 };
 
 // Insert at beginning
-
+void insertBegin(Node* &head, int d){
+    Node* temp = new Node(d);
+    temp->next = head;
+    head->prev = temp;
+    head = temp;
+}
 // Traversing the linked list
 void print(Node* head){
     Node* temp = head;
