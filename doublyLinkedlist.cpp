@@ -23,7 +23,14 @@ void insertBegin(Node* &head, int d){
     head->prev = temp;
     head = temp;
 }
+
 // Insert at tail
+void insertAtTail(Node* &tail, int d){
+    Node* temp = new Node(d);
+    tail->next = temp;
+    temp->prev = tail;
+    temp = tail;
+}
 // Traversing the linked list
 void print(Node* head){
     Node* temp = head;
