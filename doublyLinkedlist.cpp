@@ -31,6 +31,7 @@ void insertAtTail(Node* &tail, int d){
     temp->prev = tail;
     temp = tail;
 }
+
 // Traversing the linked list
 void print(Node* head){
     Node* temp = head;
