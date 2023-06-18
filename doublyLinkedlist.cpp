@@ -1,9 +1,9 @@
-//Doubly linked list implementation
+// Online C++ compiler to run C++ program online
+// Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
 
-//Node creation
-class Node {
+class Node{
     public:
     int data;
     Node* prev;
@@ -16,37 +16,72 @@ class Node {
     }
 };
 
-// Insert at beginning
-void insertBegin(Node* &head, int d){
+void insertAtHead(Node* &head, int d){
     Node* temp = new Node(d);
     temp->next = head;
     head->prev = temp;
     head = temp;
 }
 
-// Insert at tail
 void insertAtTail(Node* &tail, int d){
     Node* temp = new Node(d);
     tail->next = temp;
     temp->prev = tail;
-    temp = tail;
+    tail = temp;
 }
 
-// Traversing the linked list
+void insertAtPos(Node* &head, Node* &tail, int pos, int d){
+    if(pos==1){
+        insertAtHead(head, d);
+        return ;
+    }
+   
+    Node* temp = head;
+    int cnt = 1;
+    while(cnt < pos-1){
+        temp = temp->next;
+        cnt++;
+    }
+    
+     if(temp->next == NULL){
+        insertAtTail(tail, d);
+        return;
+    }
+    
+    
+    Node* newNode = new Node(d);
+    newNode->next = temp->next;
+    temp->next->prev = newNode;
+    temp->next = newNode;
+    newNode->prev = temp;
+    
+}
+
+
 void print(Node* head){
     Node* temp = head;
     while(temp != NULL){
         cout << temp->data << " ";
-        temp=temp->next;
+        temp = temp->next;
     }
     cout << endl;
 }
 
-
 int main() {
     Node* node1 = new Node(10);
     Node* head = node1;
-    print(head); //Output:-10
-
+    Node* tail = node1;
+    print(head);
+    insertAtHead(head, 5);
+    print(head);
+    insertAtTail(tail, 15);
+    print(head);
+    insertAtPos(head, tail, 4, 20);
+    print(head);
+    insertAtPos(head, tail, 1, 0);
+    print(head);
+    
+    insertAtPos(head, tail, 3, 13);
+    print(head);
     return 0;
 }
