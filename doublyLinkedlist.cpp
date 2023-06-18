@@ -23,6 +23,7 @@ void insertAtHead(Node* &head, int d){
     head = temp;
 }
 
+//Insert at tail
 void insertAtTail(Node* &tail, int d){
     Node* temp = new Node(d);
     tail->next = temp;
