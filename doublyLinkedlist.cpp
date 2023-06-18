@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+//Node creation
 class Node{
     public:
     int data;
@@ -14,6 +15,7 @@ class Node{
     }
 };
 
+//Insert at head
 void insertAtHead(Node* &head, int d){
     Node* temp = new Node(d);
     temp->next = head;
