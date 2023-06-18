@@ -59,7 +59,7 @@ void insertAtPos(Node* &head, Node* &tail, int pos, int d){
     
 }
 
-
+//Traversing the linked list
 void print(Node* head){
     Node* temp = head;
     while(temp != NULL){
