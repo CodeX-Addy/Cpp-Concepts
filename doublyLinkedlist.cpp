@@ -72,7 +72,7 @@ void print(Node* head){
 
 //Deletion operation
 void deleteNode(Node* &head, int pos){
-    if(pos == 1){
+    if(pos == 1){//Deleting head node
         Node* temp = head;
         temp->next->prev = NULL;
         head = temp->next;
