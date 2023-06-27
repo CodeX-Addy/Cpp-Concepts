@@ -96,5 +96,8 @@ int main() {
     
     insertAtPos(head, tail, 3, 13);
     print(head);
+
+    deleteNode(head, 1);
+    print(head);
     return 0;
 }
