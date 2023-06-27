@@ -69,6 +69,17 @@ void print(Node* head){
     cout << endl;
 }
 
+
+//Deletion operation
+void deleteNode(Node* &head, int pos){
+    if(pos == 1){
+        Node* temp = head;
+        temp->next->prev = NULL;
+        head = temp->next;
+        temp->next = NULL;
+    }
+}
+
 int main() {
     Node* node1 = new Node(10);
     Node* head = node1;
