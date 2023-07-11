@@ -1,4 +1,3 @@
-// Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
 
@@ -13,6 +12,8 @@ class Node{
     }
 };
 
+
+//Insertion in circular linked list
 void insert(Node* &tail, int ele, int d){
     //If linked list is emty
     if(tail == NULL){
@@ -32,6 +33,7 @@ void insert(Node* &tail, int ele, int d){
     }
 }
 
+//Traversing linked list
 void print(Node* tail){
     Node* temp = tail;
     do{
