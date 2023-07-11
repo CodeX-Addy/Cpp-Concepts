@@ -1,3 +1,4 @@
+// Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
 
@@ -12,10 +13,8 @@ class Node{
     }
 };
 
-
-//Insertion in circular linked list
 void insert(Node* &tail, int ele, int d){
-    //If linked list is emty
+    //if list is empty
     if(tail == NULL){
         Node* newNode = new Node(d);
         tail = newNode;
@@ -33,7 +32,36 @@ void insert(Node* &tail, int ele, int d){
     }
 }
 
-//Traversing linked list
+void deleteNode(Node* &tail, int d){
+    
+    if(tail == NULL){
+        cout << "List is empty" << endl;
+        return;
+    }
+    
+    else
+    {
+        Node* prev = tail;
+        Node* curr = prev->next;
+        while(curr->data != d){
+            prev = curr;
+            curr = curr->next;
+        }
+        prev->next = curr->next;
+        if(curr == prev) {
+            tail = NULL;
+        }
+
+        //>=2 Node linked list
+        else if(tail == curr ) {
+            tail = prev;
+        }
+        curr->next = NULL;
+    }
+ }
+ 
+
+
 void print(Node* tail){
     Node* temp = tail;
     do{
@@ -44,14 +72,13 @@ void print(Node* tail){
 }
 int main() {
     Node* tail = NULL;
-    insert(tail, 3, 3);
+    insert(tail, 5, 3);
     print(tail);
     
     insert(tail, 3, 5);
     print(tail);
     
-    insert(tail, 5, 7);
+    deleteNode(tail,3);
     print(tail);
-
     return 0;
 }
