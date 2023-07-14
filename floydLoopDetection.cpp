@@ -1,4 +1,3 @@
-// Online C++ compiler to run C++ program online
 //Floyd loop detection
 #include <iostream>
 using namespace std;
