@@ -31,7 +31,7 @@ int main() {
     return 0;
 }
 
-// Online C++ compiler to run C++ program online
+//FUNCTION POINTERS
 #include <iostream>
 #include<cstring>
 using namespace std;
