@@ -30,3 +30,24 @@ int main() {
     cout << *ptr << endl;
     return 0;
 }
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<cstring>
+using namespace std;
+
+int len(char * str){
+    return strlen(str);
+}
+int main() {
+    //bad practice
+    // char *ptr = "Aditya"; //In stack memory, it is a constant pointer 
+    // ptr[5] = "y";
+    //Declaration of function pointer
+    char* str = "Aditya";
+    int (*fp)(char*);
+    fp = len;
+    cout << fp(str);
+
+    return 0;
+}
