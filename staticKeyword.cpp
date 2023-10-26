@@ -29,3 +29,22 @@ int main() {
   return 0;
   return 0;
 }
+
+//Static member function
+#include<iostream>
+using namespace std;
+
+class Demo{
+public:
+int x,y;
+static void print(){
+  printf("Hello %s\n", __func__);
+}
+};
+
+int main(){
+  Demo::print();
+  Demo obj1;
+  obj1.print();
+  return 0;
+}
