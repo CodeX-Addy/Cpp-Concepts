@@ -9,7 +9,7 @@ int main()
     unordered_map<string, int> mapping;
 
     /// insertion
-    pair<string, int> p = make_pair("love", 25);
+    pair<string, int> p = make_pair("Aditya", 21);
 
     pair<string, int> q("dipansh", 24);
 
@@ -21,18 +21,18 @@ int main()
     mapping.insert(q);
     mapping.insert(r);
     // insert
-    mapping["babbar"] = 51;
+    mapping["aditya"] = 51;
 
     cout << "Size of map: " << mapping.size() << endl;
     // ACCESS
-    cout << mapping.at("love") << endl;
-    cout << mapping["love"] << endl;
+    cout << mapping.at("Aditya") << endl;
+    cout << mapping["Aditya"] << endl;
 
     // searching
     cout << mapping.count("lover") << endl;
     cout << "Size of map: " << mapping.size() << endl;
 
-    if (mapping.find("babbar") != mapping.end())
+    if (mapping.find("aditya") != mapping.end())
     {
         cout << "Found" << endl;
     }
