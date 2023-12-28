@@ -13,7 +13,7 @@ void countCharacters(unordered_map<char, int> &mapping, string str)
 
 int main()
 {
-    string str = "lovebbabbar";
+    string str = "aditya";
     unordered_map<char, int> mapping;
     countCharacters(mapping, str);
 
