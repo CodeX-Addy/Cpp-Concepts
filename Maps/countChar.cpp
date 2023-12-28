@@ -11,6 +11,14 @@ void countCharacters(unordered_map<char, int> &mapping, string str)
     }
 }
 
+//For sorting / ordering we'll use ordered map
+void countCharByOrdered(map<char,int>&mapping, string str){
+    for(int i=0; i<str.length(); ++i){
+        char ch = str[i];
+        mapping[ch]++;
+    }
+}
+
 int main()
 {
     string str = "aditya";
