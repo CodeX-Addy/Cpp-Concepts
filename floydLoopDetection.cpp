@@ -1,0 +1,112 @@
+//Floyd loop detection
+#include <iostream>
+using namespace std;
+
+class Node{
+    public:
+    int data;
+    Node* next;
+    
+    Node(int data){
+        this->data = data;
+        this->next = NULL;
+    }
+};
+
+Node* floydDetectLoop(Node* head){
+    //Case 1
+    if(head == NULL){
+        return NULL;
+    }
+    
+    Node* slow = head;
+    Node* fast = head;
+    
+    while(slow != NULL && fast != NULL){
+        fast = fast->next;
+        if(fast != NULL){
+            fast = fast->next;
+        }
+        slow = slow->next;
+        
+        if(slow == fast){
+        return slow;
+        }
+    }
+    return NULL;
+}
+
+void insertAtBegin(Node* &head, int d){
+  Node* temp = new Node(d);
+  temp->next = head;
+  head = temp;
+}
+
+void insertAtEnd(Node* &tail, int d){
+  Node* temp = new Node(d);
+  tail->next = temp;
+  temp = tail;
+}
+void insertAtPos(Node* &tail, Node* &head, int pos, int d){
+  if(pos == 1){
+    insertAtBegin(head, d);
+    return;
+  }
+
+  Node* temp = head;
+  int cnt = 1;
+  while(cnt < pos-1){
+    temp = temp->next;
+    cnt++;
+  }
+
+  Node* newNode = new Node(d);
+  newNode->next = temp->next;
+  temp->next = newNode;
+
+  if(temp->next == NULL){
+    insertAtEnd(tail, d);
+    return; 
+  }
+  
+}
+void print(Node* head){
+    Node* temp = head;
+    while(temp != NULL){
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+int main() {
+    
+  Node* node1 = new Node(10);
+  Node* head = node1;
+  Node* tail = node1;
+
+  print(head);
+
+  insertAtBegin(head, 20);
+  print(head);
+
+  insertAtEnd(tail, 100);
+  print(head);
+
+  insertAtPos(tail, head, 4, 500);
+  print(head);
+
+  insertAtPos(tail, head, 1, 1000);
+  print(head);
+  
+  tail->next = head->next;
+  //print(head);
+  
+  if(floydDetectLoop(head) != NULL){
+      cout << "Cycle is present" << endl;
+  }
+  else{
+      cout << "Cycle is not present" << endl;
+  }
+  return 0;
+}
