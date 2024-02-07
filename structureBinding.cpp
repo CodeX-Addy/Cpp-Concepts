@@ -11,7 +11,7 @@ struct Person{
 int main(){
     Person p{25, "John"};
     auto[age, name] = p;
-    cout << "Age: " << age << endl;
+    cout << "Age: " << age;
 
     return 0;
 }

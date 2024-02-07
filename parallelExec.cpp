@@ -1,4 +1,4 @@
-//Parallel execution is used to do the given task concurrently and try to use multicore 
+//Parallel execution is used to do the given task concurrently and can use multicore 
 #include<iostream>
 #include<algorithm>
 #include<vector>
