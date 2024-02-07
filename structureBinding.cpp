@@ -2,7 +2,7 @@
 using namespace std;
 
 // Structure binding is used to bind the structure variable with a temporary object of that structure. 
-//It simply assign advance data structures into our program variables.
+//It simply assign advance data structures into our program variables
 struct Person{
     int age;
     string name;
