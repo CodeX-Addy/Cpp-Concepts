@@ -8,6 +8,7 @@ struct Person{
     string name;
 };
 
+
 int main(){
     Person p{25, "John"};
     auto[age, name] = p;
