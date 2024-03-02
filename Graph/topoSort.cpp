@@ -3,6 +3,7 @@
 #include<stack>
 #include<list>
 #include<queue>
+#include<vector>
 using namespace std;
 
 class Graph{
@@ -30,9 +31,12 @@ class Graph{
         s.push(src);
     }
 
-   void topoSortBfs(int n){
+
+   //KAHN'S ALGO
+   void topoSortBfs(int n,vector<int> &topoOrder){
     queue<int> q;
     unordered_map<int,int> indegree;
+    
 
     for(auto i : adjList){
         for(auto j : i.second){
@@ -48,7 +52,7 @@ class Graph{
     while(!q.empty()){
         int frontNode = q.front();
         q.pop();
-        cout << frontNode << " ";
+        topoOrder.push_back(frontNode);
 
         for(auto i : adjList[frontNode]){
             --indegree[i];
@@ -101,7 +105,16 @@ int main(){
         st.pop();
     }*/
     
+    vector<int> topoOrder;
 
-    g.topoSortBfs(8);
+    g.topoSortBfs(8,topoOrder);
+
+    for(auto i : topoOrder){
+        cout << i << " "; 
+    }
+    
+    //Detecting cycle in directed graph using bfs topo sort
+    if(topoOrder.size() == n) cout << "No cycle present" << endl;
+    else cout << "Cycle present" << endl;
 
 }
