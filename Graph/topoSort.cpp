@@ -1,8 +1,10 @@
 #include<iostream>
 #include<unordered_map>
 #include<stack>
+#include<map>
 #include<list>
 #include<queue>
+#include<algorithm>
 #include<vector>
 using namespace std;
 
@@ -63,10 +65,7 @@ class Graph{
    }
 
     
-  
-
-
-    void printadjList(void){
+   void printadjList(void){
         for(auto i : adjList){
             cout << i.first << ": {";
             for(auto j : i.second){
@@ -80,14 +79,14 @@ class Graph{
 
 int main(){
     Graph g;
-    g.addEdge(0, 1, 1);
-    g.addEdge(1, 2, 1);
-    g.addEdge(2, 3, 1);
-    g.addEdge(3, 4, 1);
-    g.addEdge(3, 5, 1);
-    g.addEdge(4, 6, 1);
-    g.addEdge(5, 6, 1);
-    g.addEdge(6, 7, 1);
+    g.addEdge(0, 5, 0);
+	g.addEdge(5, 4, 0);
+	g.addEdge(4, 3, 0);
+	g.addEdge(0, 6, 0);
+	g.addEdge(6, 3, 0);
+	g.addEdge(0, 1, 0);
+	g.addEdge(1, 2, 0);
+	g.addEdge(2, 3, 0);
 
     //g.printadjList();
     /*stack<int> st;
@@ -116,5 +115,7 @@ int main(){
     //Detecting cycle in directed graph using bfs topo sort
     if(topoOrder.size() == n) cout << "No cycle present" << endl;
     else cout << "Cycle present" << endl;
+  
+    return 0;
 
 }
