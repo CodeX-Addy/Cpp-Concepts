@@ -63,7 +63,7 @@ class Graph{
     
    void printadjList(void){
         for(auto i : adjList){
-            cout << i.first << ": {";
+            cout << i.first << ": {->";
             for(auto j : i.second){
                 cout << j << ", ";
             }
