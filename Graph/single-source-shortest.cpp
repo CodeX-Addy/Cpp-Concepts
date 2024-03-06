@@ -3,6 +3,7 @@
 #include<list>
 #include<vector>
 #include<limits.h>
+#include<set>
 #include<stack>
 using namespace std;
 
@@ -69,6 +70,45 @@ class Graph{
         }
     }
 
+    void dijkstraAlgo(int n, int src, int dest){
+        vector<int>dist(n+1, INT_MAX);
+        set<pair<int,int>> st;
+
+        st.insert({0,src});
+        dist[src] = 0;
+
+        while(!st.empty()){
+            auto topElement = st.begin();
+            pair<int,int>topPair = *topElement;
+            int topDist = topPair.first;
+            int topNode = topPair.second;
+
+            st.erase(st.begin());
+
+            for(pair<int,int> nbr : adjList[topNode]){
+                int nbrNode = nbr.first;
+                int nbrDist = nbr.second;
+
+                if(topDist + nbrDist < dist[nbrNode]){
+
+                    auto prevEntry = st.find({dist[nbrNode], nbrNode});
+                    if(prevEntry!=st.end()){
+                        st.erase(prevEntry);
+                    }
+
+                    dist[nbrNode] = topDist + nbrDist;
+                    st.insert({dist[nbrNode], nbrNode});
+                }
+            }
+        }
+        if (dist[dest] == INT_MAX) 
+               cout << "There is no path from Node " << src << " to Node " << dest << endl;
+        else 
+               cout << "Shortest Distance from Node " << src << " to Node " << dest << ": " << dist[dest] << endl;
+
+
+    }
+
     void print(){
         for(auto i : adjList){
             cout << i.first << ": {";
@@ -82,13 +122,15 @@ class Graph{
 
 int main(){
     Graph g;
-    g.addEdge(0, 1, 5, true);
-    g.addEdge(0, 2, 3, true);
-    g.addEdge(1, 3, 3, true);
-    g.addEdge(2, 1, 2, true);
-    g.addEdge(2, 3, 5, true);
-    g.addEdge(2, 4, 6, true);
-    g.addEdge(4, 3, 1, true);
+	g.addEdge(1,6,14,0);
+	g.addEdge(1,3,9,0);
+	g.addEdge(1,2,7,0);
+	g.addEdge(2,3,10,0);
+	g.addEdge(2,4,15,0);
+	g.addEdge(3,4,11,0);
+	g.addEdge(6,3,2,0);
+	g.addEdge(6,5,9,0);
+	g.addEdge(5,4,6,0);
 
     //g.print();
     unordered_map<int, bool> vis;
@@ -101,7 +143,11 @@ int main(){
     
 
     //cout << endl;
-    g.shortestPathDfs(topoOrder, 5);
+    //g.shortestPathDfs(topoOrder, 5);
+    int n = 6;
+	int src = 6;
+	int dest = 4;
+	g.dijkstraAlgo(n, src, dest);
     
 
     return 0;
