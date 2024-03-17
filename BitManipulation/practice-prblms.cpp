@@ -23,6 +23,11 @@ void setithBit(int n, int i){
     cout << "Updated number: " << n << endl;
 }
 
+void clearithBit(int n, int i){
+    int mask = ~(1<<i);
+    n=n&mask;
+}
+
 int main(){
     int n;
     //cin >> n;
