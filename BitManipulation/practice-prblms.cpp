@@ -17,10 +17,17 @@ void getithBit(int n, int i){
         cout << "Bit is->0" << endl;
 }
 
+void setithBit(int n, int i){
+    int mask = 1<<i;
+    n = n | mask;
+    cout << "Updated number: " << n << endl;
+}
+
 int main(){
     int n;
     //cin >> n;
     //checkEvenOdd(n);
-    getithBit(4, 1);
+    //getithBit(4, 1);
+    setithBit(2,0);
     return 0;
 }
