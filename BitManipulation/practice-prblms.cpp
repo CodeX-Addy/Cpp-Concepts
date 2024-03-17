@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 void checkEvenOdd(int&n){
@@ -45,11 +46,31 @@ int fastCOuntSetBits(int n) {
 	return count;
 }
 
+void getSubsequences(string str){
+    vector<string> ans;
+    int n = str.length();
+    for(int i=0; i<(1<<n); ++i){
+        string temp = "";
+        for(int j=0; j<n; ++j){
+            char ch = str[j];
+            int mask = 1<<j;
+            if(i & mask)
+                temp.push_back(ch);
+        }
+        ans.push_back(temp);
+    }
+    for(auto i : ans)
+        cout << i << " ";
+}
+
 int main(){
     int n;
     //cin >> n;
     //checkEvenOdd(n);
     //getithBit(4, 1);
-    setithBit(2,0);
+    //setithBit(2,0);
+    vector<int> v;
+    getSubsequences("abc");
+    
     return 0;
 }
