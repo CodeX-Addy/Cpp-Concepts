@@ -28,6 +28,23 @@ void clearithBit(int n, int i){
     n=n&mask;
 }
 
+bool fastCheckPowerOf2(int n) {
+	if((n & (n-1)) == 0)
+		return true;
+	else 
+		return false;
+}
+
+int fastCOuntSetBits(int n) {
+	int count = 0;
+	while(n != 0) {
+		//cout << "n value: " << n << endl;
+		count++;
+		n = (n & (n-1));
+	}
+	return count;
+}
+
 int main(){
     int n;
     //cin >> n;
