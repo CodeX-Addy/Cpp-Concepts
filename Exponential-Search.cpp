@@ -30,3 +30,6 @@ int main(){
     int ans = expSearch(arr, 4);
     cout << ans << endl;
 }
+
+//More about exp search
+// https://en.wikipedia.org/wiki/Exponential_search
