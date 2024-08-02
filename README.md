@@ -1,1 +1,1 @@
-This repo includes my implementation and approaches of various cpp concepts!! 
+This repo includes my implementation and approaches for various cpp concepts!! 
